@@ -1,15 +1,11 @@
-import testData from '../data/test-data.js'
-console.log(testData);
+import testData from '../data/test-data.js';
 import makeHtmlTemplate from '../src/template-component.js';
-;const test = QUnit.test;
+const test = QUnit.test;
 
 QUnit.module('template literal for news articles');
 
-
-
 test('set up basic template literal', function(assert) {
     //arrange
-  
     //act
     const expected = /*html*/`
         <li>
@@ -24,8 +20,7 @@ test('set up basic template literal', function(assert) {
 
     const result = makeHtmlTemplate(testData);
 
-
-
     //assert
     assert.htmlEqual(result, expected);
 });
+

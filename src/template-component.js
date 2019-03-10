@@ -1,4 +1,8 @@
+const newsList = document.getElementById('news-list');
+
 export default function makeHtmlTemplate(testData){
+    clearRows();
+
     const newsData = testData.articles;
     newsData.forEach(newsData => {
         const title = newsData.title;
@@ -7,7 +11,7 @@ export default function makeHtmlTemplate(testData){
         const url = newsData.url;
         const img = newsData.urlToImage;
         const published = newsData.publishedAt;
-        
+
         const html = /*html*/`
         <li>
             <h2>${title}</h2>
@@ -19,7 +23,6 @@ export default function makeHtmlTemplate(testData){
         </li>
         `;
         
-        const newsList = document.getElementById('news-list');
         const template = document.createElement('template');
         template.innerHTML = html;
         const dom = template.content;
@@ -27,4 +30,10 @@ export default function makeHtmlTemplate(testData){
         
     });
     
+}
+
+function clearRows(){
+    while(newsList.firstChild){
+        newsList.firstChild.remove();
+    }
 }
