@@ -10,3 +10,7 @@ form.addEventListener('submit', event => {
     const newQuery = writeSearchToQuery(existingQuery, searchTerm);
     window.location.hash = newQuery;
 });
+
+export default function updateSearchTerm(searchTerm){
+    searchInput.value = searchTerm;
+}

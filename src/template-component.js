@@ -4,6 +4,7 @@ export default function makeHtmlTemplate(testData){
     clearRows();
 
     const newsData = testData.articles;
+
     newsData.forEach(newsData => {
         const title = newsData.title;
         const author = newsData.author;
