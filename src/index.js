@@ -1,6 +1,6 @@
 import makeHtmlTemplate from '../src/template-component.js';
 // import testData from '../data/test-data.js';
-import './paging-component.js';
+import updatePagingInfo from './paging-component.js';
 import updateSearchTerm from '../src/search-component.js';
 import { readFromQuery } from './hash-query.js';
 import makeSearchUrl from '../src/make-search-url.js';
@@ -21,5 +21,10 @@ window.addEventListener('hashchange', () => {
         .then(response => response.json())
         .then(body => {
             makeHtmlTemplate(body);
+            // const pagingInfo = {
+            //     page: body.articles,
+            //     totalPages: body.results
+            // };
+            // updatePagingInfo(pagingInfo);
         });
 });

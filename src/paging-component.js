@@ -6,11 +6,14 @@ const nextButtonNode = document.getElementById('next-button');
 
 let currentPageNumber = 1;
 
-// export function updatePagingInfo(pagingInfo){
-//     currentPageNumber = pagingInfo.page;
-//     currentPageNode.textContent = currentPageNumber;
+export default function updatePagingInfo(pagingInfo){
+    currentPageNumber = pagingInfo.page;
+    currentPageNode.textContent = currentPageNumber;
+    totalPagesNode.textContent = pagingInfo.totalPages;
+    previousButtonNode.disabled = currentPageNumber === 1;
+    nextButtonNode.disabled = currentPageNumber === pagingInfo.totalPages;
 
-// }
+}
 
 function updateQuery() {
     const existingQuery = window.location.hash.slice(1);
