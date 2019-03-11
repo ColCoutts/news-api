@@ -1,5 +1,6 @@
 import makeHtmlTemplate from '../src/template-component.js';
 // import testData from '../data/test-data.js';
+import './paging-component.js';
 import updateSearchTerm from '../src/search-component.js';
 import { readFromQuery } from './hash-query.js';
 import makeSearchUrl from '../src/make-search-url.js';
